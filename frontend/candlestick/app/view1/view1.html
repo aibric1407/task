@@ -1,0 +1,22 @@
+<div layout="row" layout-align="center">
+    <div layout="column">
+        <div layout="row">
+            <md-input-container style="margin-right: 10px;">
+                <label>Time</label>
+                <md-select ng-change="updatePeriod()" ng-model="period">
+                    <md-option ng-repeat="period in periods" value="{{period}}">{{period}}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <label>Trading pairs</label>
+                <md-select ng-model="type">
+                    <md-option ng-repeat="type in types" value="{{type}}">{{type}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+</div>
+<div class="graphContainer" layout="row" layout-align="center">
+    <div ng-show="type=='BTC-USD'" id="plotly-BTC"></div>
+    <div ng-show="type=='ETH-USD'" id="plotly-ETH"></div>
+</div>

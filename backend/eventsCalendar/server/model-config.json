@@ -1,0 +1,48 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "eventsCalendar",
+    "acls": [{
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "register"
+    }]
+  },
+  "AccessToken": {
+    "dataSource": "eventsCalendar",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "eventsCalendar",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "eventsCalendar",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "eventsCalendar",
+    "public": false
+  },
+  "Event": {
+    "dataSource": "eventsCalendar",
+    "public": true
+  }
+}
